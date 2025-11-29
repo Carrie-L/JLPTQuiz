@@ -18,17 +18,16 @@ const DialogLayer: React.FC<DialogLayerProps> = ({ step, canProceed, onNext, onP
   return (
     <div className="w-full h-full max-w-5xl mx-auto relative group pt-6">
       
-      {/* Nameplate - Floating Capsule Style (Pink) */}
-      <div className="absolute top-6 left-12 z-30 transform -translate-y-full">
-        <div className={`${nameColorClass} border-2 px-6 py-1.5 rounded-full shadow-sm font-bold tracking-wide text-sm md:text-base flex items-center gap-2`}>
-           {/* Ghost icon or character icon could go here if available */}
-           <span>{step.speaker}</span>
-        </div>
-      </div>
-
       {/* Main Card */}
       <div className="w-full h-full bg-white/95 backdrop-blur-md rounded-[20px] shadow-lg relative flex flex-col p-8 transition-all duration-300">
         
+        {/* Nameplate - Positioned overlapping the top border */}
+        <div className="absolute top-0 left-8 z-30 transform -translate-y-1/2">
+          <div className={`${nameColorClass} border-2 px-6 py-1.5 rounded-full shadow-sm font-bold tracking-wide text-sm md:text-base flex items-center gap-2`}>
+             <span>{step.speaker}</span>
+          </div>
+        </div>
+
         {/* Green Corner Brackets Decoration */}
         {/* Top Left */}
         <div className="absolute top-4 left-4 w-6 h-6 border-t-[3px] border-l-[3px] border-[#6EE7B7] rounded-tl-lg pointer-events-none" />
@@ -40,7 +39,7 @@ const DialogLayer: React.FC<DialogLayerProps> = ({ step, canProceed, onNext, onP
         <div className="absolute bottom-4 right-4 w-6 h-6 border-b-[3px] border-r-[3px] border-[#6EE7B7] rounded-br-lg pointer-events-none" />
 
         {/* Text Content */}
-        <div className="flex-grow overflow-y-auto mb-4 px-4 custom-scrollbar">
+        <div className="flex-grow overflow-y-auto mb-4 px-4 custom-scrollbar mt-2">
           <p className="text-xl md:text-2xl font-bold text-slate-700 leading-relaxed font-['Zen_Maru_Gothic']">
             {step.text}
           </p>
