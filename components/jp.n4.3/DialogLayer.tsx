@@ -12,44 +12,36 @@ interface DialogLayerProps {
 
 const DialogLayer: React.FC<DialogLayerProps> = ({ step, canProceed, onNext, onPrev, isLast }) => {
   const getSpeakerColor = (color: string) => {
-    switch (color) {
-      case 'teal': return 'bg-teal-500 border-teal-600 text-white';
-      case 'orange': return 'bg-orange-500 border-orange-600 text-white';
-      case 'pink': return 'bg-pink-500 border-pink-600 text-white';
-      default: return 'bg-slate-500 border-slate-600 text-white';
-    }
+    // Note: In this new design, we stick to the Teal Theme for the card structure,
+    // but we can use the prop to slightly tint the nameplate text if needed.
+    // For now, adhering to the requested "Image 2" style which is teal-dominant.
+    return 'text-teal-700 border-teal-500';
   };
-
-  const getCornerColor = (color: string) => {
-    switch (color) {
-      case 'teal': return 'border-teal-400';
-      case 'orange': return 'border-orange-400';
-      case 'pink': return 'border-pink-400';
-      default: return 'border-slate-400';
-    }
-  };
-
-  const cornerColorClass = getCornerColor(step.speakerColor);
 
   return (
     <div className="w-full h-full max-w-5xl mx-auto relative group">
       
-      {/* Main Glass Card */}
-      <div className="w-full h-full bg-white/80 backdrop-blur-xl border border-white/40 shadow-2xl rounded-[2rem] relative overflow-hidden transition-all duration-300">
-        
-        {/* L-Shaped Corner Brackets (The Viewfinder Aesthetic) */}
-        <div className={`absolute top-4 left-4 w-8 h-8 border-t-4 border-l-4 rounded-tl-lg ${cornerColorClass} opacity-70`} />
-        <div className={`absolute top-4 right-4 w-8 h-8 border-t-4 border-r-4 rounded-tr-lg ${cornerColorClass} opacity-70`} />
-        <div className={`absolute bottom-4 left-4 w-8 h-8 border-b-4 border-l-4 rounded-bl-lg ${cornerColorClass} opacity-70`} />
-        <div className={`absolute bottom-4 right-4 w-8 h-8 border-b-4 border-r-4 rounded-br-lg ${cornerColorClass} opacity-70`} />
-
-        {/* Floating Nameplate */}
-        <div className={`absolute top-0 left-8 transform -translate-y-1/2 px-6 py-2 rounded-full font-bold shadow-lg z-20 border-b-4 ${getSpeakerColor(step.speakerColor)}`}>
+      {/* Nameplate - Now placed OUTSIDE the overflow-hidden container to ensure it floats above */}
+      {/* "Floating Nameplate" Positioned absolute relative to the wrapper */}
+      <div className="absolute top-0 left-8 z-30 transform -translate-y-1/2">
+        <div className={`bg-white border-2 border-teal-500 px-6 py-2 rounded-lg shadow-sm text-teal-700 font-bold tracking-wide text-lg`}>
           {step.speaker}
+        </div>
+      </div>
+
+      {/* Main Card */}
+      <div className="w-full h-full bg-white/90 backdrop-blur-md border-2 border-teal-500 shadow-xl rounded-[2rem] relative flex flex-col transition-all duration-300">
+        
+        {/* Decorative Wave (SVG) on the right */}
+        <div className="absolute right-6 top-1/2 transform -translate-y-1/2 opacity-20 pointer-events-none">
+           <svg width="60" height="100" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 10 C 50 50, 50 150, 90 190" stroke="#14B8A6" strokeWidth="4" strokeLinecap="round" />
+              <path d="M30 10 C 70 50, 70 150, 110 190" stroke="#14B8A6" strokeWidth="4" strokeLinecap="round" />
+           </svg>
         </div>
 
         {/* Text Content */}
-        <div className="p-10 pt-12 h-full flex flex-col">
+        <div className="p-10 pt-12 h-full flex flex-col relative z-10">
           <p className="text-xl md:text-2xl font-medium text-slate-700 leading-relaxed font-['Zen_Maru_Gothic']">
             {step.text}
           </p>
@@ -59,29 +51,30 @@ const DialogLayer: React.FC<DialogLayerProps> = ({ step, canProceed, onNext, onP
             <button 
               onClick={onPrev}
               disabled={step.id === 1}
-              className={`p-3 rounded-full hover:bg-slate-100 text-slate-400 transition-colors ${step.id === 1 ? 'opacity-0' : 'opacity-100'}`}
+              className={`p-2 rounded-full text-teal-400 hover:bg-teal-50 transition-colors ${step.id === 1 ? 'opacity-0' : 'opacity-100'}`}
               title="上一步"
             >
               <RotateCcw size={20} />
             </button>
 
+            {/* Next Button - Outline Style */}
             <button
               onClick={onNext}
               disabled={!canProceed}
               className={`
-                group/btn relative px-8 py-3 rounded-2xl font-bold flex items-center gap-3 transition-all duration-300
+                group/btn relative px-6 py-2 rounded-xl font-bold flex items-center gap-2 transition-all duration-300 border-2
                 ${canProceed 
-                  ? 'bg-slate-800 text-white shadow-lg hover:shadow-xl hover:bg-slate-900 hover:scale-105 cursor-pointer' 
-                  : 'bg-slate-200 text-slate-400 cursor-not-allowed'}
+                  ? 'bg-white border-teal-500 text-teal-700 hover:bg-teal-50 shadow-sm hover:shadow-md cursor-pointer' 
+                  : 'bg-slate-50 border-slate-200 text-slate-300 cursor-not-allowed'}
               `}
             >
-              <span>{isLast ? '完成' : '下一步'}</span>
-              <ArrowRight size={20} className={canProceed ? 'group-hover/btn:translate-x-1 transition-transform' : ''} />
+              <span>{isLast ? '完成' : 'Next'}</span>
+              <ArrowRight size={18} className={canProceed ? 'group-hover/btn:translate-x-1 transition-transform' : ''} />
               
               {!canProceed && (
-                <div className="absolute -top-12 right-0 bg-slate-800 text-white text-xs py-1 px-3 rounded-lg shadow-lg opacity-0 group-hover/btn:opacity-100 transition-opacity whitespace-nowrap">
+                <div className="absolute -top-12 right-0 bg-white border border-teal-200 text-teal-800 text-xs py-2 px-3 rounded-lg shadow-lg opacity-0 group-hover/btn:opacity-100 transition-opacity whitespace-nowrap z-50">
                   请先完成当前任务！
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1 w-2 h-2 bg-slate-800 rotate-45"></div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-2 h-2 bg-white border-b border-r border-teal-200 rotate-45"></div>
                 </div>
               )}
             </button>

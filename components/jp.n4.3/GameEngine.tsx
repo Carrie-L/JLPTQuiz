@@ -50,9 +50,14 @@ const GameEngine: React.FC<GameEngineProps> = ({ onExit }) => {
   }
 
   return (
-    <div className="relative w-full h-screen bg-slate-900 overflow-hidden flex flex-col">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#FFFDF5] to-[#F0EFEB] -z-10" />
+    <div className="relative w-full h-screen bg-[#FDFCF5] overflow-hidden flex flex-col font-['Zen_Maru_Gothic']">
+      {/* Background Decor - Arrietty Style */}
+      <div className="absolute inset-0 pointer-events-none">
+         {/* Soft sunbeam */}
+         <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-yellow-100/50 rounded-full blur-[100px]" />
+         {/* Foliage hint */}
+         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-teal-50/60 rounded-full blur-[80px]" />
+      </div>
 
       {/* Top Layer: Visual Stage (70%) */}
       <div className="flex-grow relative w-full h-[70%] z-0 p-4 pb-0 flex items-center justify-center">
