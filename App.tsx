@@ -14,7 +14,7 @@ const App = () => {
       <header className="w-full max-w-5xl mb-12 flex justify-between items-center">
         <div>
           <h1 className="text-4xl font-extrabold text-teal-700 tracking-tight">Nihongo Quest</h1>
-          <p className="text-slate-500 mt-2 font-medium">Visual Interactive Learning</p>
+          <p className="text-slate-500 mt-2 font-medium">交互式日语视觉小说</p>
         </div>
         <div className="flex gap-2">
           <div className="bg-orange-100 text-orange-600 px-4 py-2 rounded-full font-bold flex items-center gap-2">
@@ -38,13 +38,13 @@ const App = () => {
             <span className="font-bold text-lg">4.3</span>
           </div>
           
-          <h3 className="text-xl font-bold text-slate-800 mb-2">The Nai Form</h3>
+          <h3 className="text-xl font-bold text-slate-800 mb-2">ない形 (Nai Form)</h3>
           <p className="text-sm text-slate-500 mb-6 leading-relaxed">
-            Master the casual negative form (ない形). Learn the conjugation rules for all verb groups interactively.
+            掌握否定形式 (ない形)。通过互动学习所有动词类型的变形规则。
           </p>
           
           <div className="flex items-center text-teal-600 font-bold text-sm group-hover:gap-2 transition-all">
-            <span>Start Lesson</span>
+            <span>开始课程</span>
             <ArrowRight size={16} />
           </div>
 
@@ -57,7 +57,7 @@ const App = () => {
              <div className="w-12 h-12 bg-slate-200 rounded-2xl flex items-center justify-center text-slate-400 mb-4">
                 <span className="font-bold text-lg">?</span>
              </div>
-             <p className="font-medium text-slate-400">Coming Soon</p>
+             <p className="font-medium text-slate-400">敬请期待</p>
           </div>
         ))}
       </main>

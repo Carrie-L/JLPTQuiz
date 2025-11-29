@@ -24,7 +24,7 @@ export interface InteractiveConfig {
     group: number;
   };
   options?: string[];
-  correctAnswer?: string;
+  correctAnswer?: string | string[]; // Changed to support multiple answers (Hiragana/Kanji)
   explanation?: string;
   placeholder?: string;
 }
@@ -41,7 +41,7 @@ export interface ScriptStep {
     grammarRule?: {
       title: string;
       content: string[];
-      examples: { jp: string; en: string }[];
+      examples: { jp: string; cn: string }[]; // Changed en to cn for Chinese
     };
     interactiveConfig?: InteractiveConfig;
   };

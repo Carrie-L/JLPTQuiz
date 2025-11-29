@@ -19,8 +19,8 @@ const VictoryScreen: React.FC<VictoryScreenProps> = ({ onExit }) => {
            <Trophy size={48} fill="currentColor" />
         </div>
         
-        <h1 className="text-4xl font-extrabold text-slate-800 mb-2">Lesson Complete!</h1>
-        <p className="text-slate-500 mb-8 font-medium">You've mastered the Nai Form.</p>
+        <h1 className="text-4xl font-extrabold text-slate-800 mb-2">课程完成!</h1>
+        <p className="text-slate-500 mb-8 font-medium">你已经掌握了‘ない形’。</p>
 
         <div className="flex gap-2 mb-8">
            {[1, 2, 3].map(i => (
@@ -29,11 +29,11 @@ const VictoryScreen: React.FC<VictoryScreenProps> = ({ onExit }) => {
         </div>
 
         <div className="bg-slate-50 w-full rounded-2xl p-6 mb-8 text-left">
-           <h3 className="text-sm font-bold text-slate-400 uppercase mb-3">Summary</h3>
+           <h3 className="text-sm font-bold text-slate-400 uppercase mb-3">总结</h3>
            <ul className="space-y-2 text-slate-700 font-medium">
-              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-teal-500 rounded-full" /> G1: u → a + nai</li>
-              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-teal-500 rounded-full" /> G2: drop ru + nai</li>
-              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-orange-500 rounded-full" /> Irregular: Konai / Shinai</li>
+              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-teal-500 rounded-full" /> 一类: u → a + nai</li>
+              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-teal-500 rounded-full" /> 二类: 去掉 ru + nai</li>
+              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-orange-500 rounded-full" /> 不规则: Konai / Shinai</li>
            </ul>
         </div>
 
@@ -42,7 +42,7 @@ const VictoryScreen: React.FC<VictoryScreenProps> = ({ onExit }) => {
           className="w-full bg-slate-800 text-white font-bold py-4 rounded-xl hover:bg-slate-900 transition-transform hover:scale-105 flex items-center justify-center gap-2"
         >
           <Home size={20} />
-          Back to Menu
+          回到主菜单
         </button>
       </div>
     </div>

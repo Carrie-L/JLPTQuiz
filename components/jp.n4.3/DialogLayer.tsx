@@ -60,6 +60,7 @@ const DialogLayer: React.FC<DialogLayerProps> = ({ step, canProceed, onNext, onP
               onClick={onPrev}
               disabled={step.id === 1}
               className={`p-3 rounded-full hover:bg-slate-100 text-slate-400 transition-colors ${step.id === 1 ? 'opacity-0' : 'opacity-100'}`}
+              title="上一步"
             >
               <RotateCcw size={20} />
             </button>
@@ -74,12 +75,12 @@ const DialogLayer: React.FC<DialogLayerProps> = ({ step, canProceed, onNext, onP
                   : 'bg-slate-200 text-slate-400 cursor-not-allowed'}
               `}
             >
-              <span>{isLast ? 'Finish' : 'Next'}</span>
+              <span>{isLast ? '完成' : '下一步'}</span>
               <ArrowRight size={20} className={canProceed ? 'group-hover/btn:translate-x-1 transition-transform' : ''} />
               
               {!canProceed && (
                 <div className="absolute -top-12 right-0 bg-slate-800 text-white text-xs py-1 px-3 rounded-lg shadow-lg opacity-0 group-hover/btn:opacity-100 transition-opacity whitespace-nowrap">
-                  Complete the task first!
+                  请先完成当前任务！
                   <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1 w-2 h-2 bg-slate-800 rotate-45"></div>
                 </div>
               )}

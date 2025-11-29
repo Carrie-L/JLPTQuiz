@@ -57,11 +57,11 @@ const StageLayer: React.FC<StageLayerProps> = ({ step, onComplete }) => {
                </div>
                
                <div className="space-y-3">
-                 <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">Examples</h3>
+                 <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">例句 (Examples)</h3>
                  {viewContent.grammarRule?.examples.map((ex, idx) => (
                    <div key={idx} className="flex justify-between items-center p-3 border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors rounded-lg">
                      <span className="text-lg font-bold text-slate-800">{ex.jp}</span>
-                     <span className="text-slate-500 font-serif italic">{ex.en}</span>
+                     <span className="text-slate-500 font-serif italic">{ex.cn}</span>
                    </div>
                  ))}
                </div>
