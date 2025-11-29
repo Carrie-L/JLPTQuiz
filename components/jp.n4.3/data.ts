@@ -3,31 +3,31 @@ import { ScriptStep, ViewType, LabMode } from './types';
 export const scriptData: ScriptStep[] = [
   {
     id: 1,
-    speaker: "Yuki 老师",
+    speaker: "凛 (Rin)",
     speakerColor: "teal",
-    text: "你好，健！今天我们来学习动词的‘ない形’（Nai-form）。这是表示‘不’或‘未做某事’的简体形式。",
+    text: "抚子，听好了。今天要在露营前学会动词的‘ない形’（Nai-form）。",
     viewType: ViewType.IMAGE,
     viewContent: {
-      imagePrompt: "A friendly anime teacher standing in front of a chalkboard with Hiragana characters.",
+      imagePrompt: "Rin Shima reading a book by the campfire, cool atmosphere.",
       imageCaption: "第 4.3 课：ない形 (Nai Form)"
     }
   },
   {
     id: 2,
-    speaker: "健 (Ken)",
-    speakerColor: "orange",
-    text: "简体否定？所以比起说‘食べません’ (Tabemasen)，我可以用这个形式？",
+    speaker: "抚子 (Nadeshiko)",
+    speakerColor: "pink",
+    text: "诶——？可是我想先煮咖喱面！如果不吃东西的话……不吃……啊！‘不吃’就是ない形吗？",
     viewType: ViewType.IMAGE,
     viewContent: {
-      imagePrompt: "A student looking curious holding a bento box.",
+      imagePrompt: "Nadeshiko looking excited holding a cup of noodles.",
       imageCaption: "敬体 vs 简体"
     }
   },
   {
     id: 3,
-    speaker: "Yuki 老师",
+    speaker: "凛 (Rin)",
     speakerColor: "teal",
-    text: "没错！‘食べません’ 会变成 ‘食べない’。这在日常对话和许多语法结构中非常重要。我们先从二类动词（一段动词）开始，因为它们最简单。",
+    text: "反应很快嘛。‘食べません’ (Tabemasen) 是敬体，而简体就是 ‘食べない’ (Tabenai)。这在普通对话里很常用。先从二类动词（一段动词）开始。",
     viewType: ViewType.GRAMMAR_EXPLAIN,
     viewContent: {
       grammarRule: {
@@ -42,9 +42,9 @@ export const scriptData: ScriptStep[] = [
   },
   {
     id: 4,
-    speaker: "Yuki 老师",
+    speaker: "凛 (Rin)",
     speakerColor: "teal",
-    text: "试一试吧，健。把 ‘寝る’ (Neru / 睡觉) 变成ない形。",
+    text: "抚子，把 ‘寝る’ (Neru / 睡觉) 变成ない形试试。如果做不对，今晚就没有火锅吃。",
     viewType: ViewType.INTERACTIVE_LAB,
     viewContent: {
       interactiveConfig: {
@@ -57,26 +57,26 @@ export const scriptData: ScriptStep[] = [
           group: 2
         },
         correctAnswer: ["ねない", "寝ない"],
-        explanation: "去掉 'ru' 加上 'nai'。很简单！"
+        explanation: "去掉 'ru' 加上 'nai'。"
       }
     }
   },
   {
     id: 5,
-    speaker: "健 (Ken)",
-    speakerColor: "orange",
-    text: "太简单了！就像切掉尾巴一样。那三类动词（不规则动词）呢？",
+    speaker: "抚子 (Nadeshiko)",
+    speakerColor: "pink",
+    text: "为了火锅！这点小事难不倒我！‘寝ない’！接下来呢？",
     viewType: ViewType.IMAGE,
     viewContent: {
-      imagePrompt: "Ken looking confident.",
+      imagePrompt: "Nadeshiko fired up.",
       imageCaption: "二类动词已掌握！"
     }
   },
   {
     id: 6,
-    speaker: "Yuki 老师",
+    speaker: "凛 (Rin)",
     speakerColor: "teal",
-    text: "不规则动词只有两个。你只需要死记硬背。‘する’ (Suru) 变成 ‘しない’ (Shinai)，‘くる’ (Kuru) 变成 ‘こない’ (Konai)。",
+    text: "接下来是两个不规则动词（三类动词）。只能死记硬背。‘する’ (Suru) 变成 ‘しない’ (Shinai)，‘くる’ (Kuru) 变成 ‘こない’ (Konai)。",
     viewType: ViewType.GRAMMAR_EXPLAIN,
     viewContent: {
       grammarRule: {
@@ -91,9 +91,9 @@ export const scriptData: ScriptStep[] = [
   },
   {
     id: 7,
-    speaker: "Yuki 老师",
+    speaker: "凛 (Rin)",
     speakerColor: "teal",
-    text: "注意 ‘くる’ (Kuru)。虽然汉字写作 ‘来’ (ku)，但在否定形中读音变成了 ‘Ko’。",
+    text: "特别注意 ‘くる’ (Kuru)。虽然汉字还是写作 ‘来’，但在否定形中读音变了。选出正确的那个。",
     viewType: ViewType.INTERACTIVE_LAB,
     viewContent: {
       interactiveConfig: {
@@ -113,9 +113,20 @@ export const scriptData: ScriptStep[] = [
   },
   {
     id: 8,
-    speaker: "Yuki 老师",
+    speaker: "抚子 (Nadeshiko)",
+    speakerColor: "pink",
+    text: "Konai... Konai... 记住了！如果不来 (Konai) 露营的话就太可惜了！",
+    viewType: ViewType.IMAGE,
+    viewContent: {
+      imagePrompt: "Nadeshiko nodding.",
+      imageCaption: "三类动词完成"
+    }
+  },
+  {
+    id: 9,
+    speaker: "凛 (Rin)",
     speakerColor: "teal",
-    text: "现在来看最难的部分：一类动词（五段动词）。对于这些动词，我们要把结尾的 ‘u段’ 音变成 ‘a段’ 音，然后加上 ‘nai’。",
+    text: "最后是最麻烦的一类动词（五段动词）。要把结尾的 ‘u段’ 音变成 ‘a段’ 音，再加 ‘nai’。",
     viewType: ViewType.GRAMMAR_EXPLAIN,
     viewContent: {
       grammarRule: {
@@ -129,10 +140,10 @@ export const scriptData: ScriptStep[] = [
     }
   },
   {
-    id: 9,
-    speaker: "Yuki 老师",
+    id: 10,
+    speaker: "凛 (Rin)",
     speakerColor: "teal",
-    text: "让我们试试 ‘飲む’ (Nomu / 喝)。‘Mu’ 变成 ‘Ma’。所以...",
+    text: "试试 ‘飲む’ (Nomu / 喝)。‘Mu’ 变成 ‘Ma’。虽然这里只有茶，但也要学会说‘不喝’。",
     viewType: ViewType.INTERACTIVE_LAB,
     viewContent: {
       interactiveConfig: {
@@ -151,10 +162,10 @@ export const scriptData: ScriptStep[] = [
     }
   },
   {
-    id: 10,
-    speaker: "Yuki 老师",
+    id: 11,
+    speaker: "凛 (Rin)",
     speakerColor: "teal",
-    text: "一类动词有一个非常重要的例外！如果动词以 ‘u’ (う) 结尾，比如 ‘買う’ (Kau)，它要变成 ‘Wa’ (わ)，而不是 ‘A’。",
+    text: "还有一个陷阱。如果动词是以 ‘u’ (う) 结尾的，比如 ‘買う’ (Kau)，它要变成 ‘Wa’ (わ)，而不是 ‘A’。",
     viewType: ViewType.GRAMMAR_EXPLAIN,
     viewContent: {
       grammarRule: {
@@ -168,10 +179,10 @@ export const scriptData: ScriptStep[] = [
     }
   },
   {
-    id: 11,
-    speaker: "健 (Ken)",
-    speakerColor: "orange",
-    text: "明白了。所以 ‘Kau’ 是 ‘Kawanai’。让我来证明我懂了！",
+    id: 12,
+    speaker: "抚子 (Nadeshiko)",
+    speakerColor: "pink",
+    text: "明白了！‘Kau’ 变成 ‘Kawanai’！这就像如果不买 (Kawanai) 食材就没法做饭一样重要！",
     viewType: ViewType.INTERACTIVE_LAB,
     viewContent: {
       interactiveConfig: {
@@ -189,10 +200,10 @@ export const scriptData: ScriptStep[] = [
     }
   },
   {
-    id: 12,
-    speaker: "Yuki 老师",
+    id: 13,
+    speaker: "凛 (Rin)",
     speakerColor: "teal",
-    text: "干得好，健！你已经掌握了ない形的基础。继续保持练习！",
+    text: "不错嘛。看来下次露营你可以负责看路标了。今天就到这里。",
     viewType: ViewType.VICTORY,
     viewContent: {}
   }

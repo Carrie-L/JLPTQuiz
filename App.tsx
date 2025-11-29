@@ -79,7 +79,7 @@ const App = () => {
              <span className="text-xl">文</span><span className="text-xs align-top">A</span>
           </div>
           <div className="flex-grow">
-            <h3 className="font-bold text-slate-800 text-lg group-hover:text-teal-700 transition-colors">日语 N4：ない形</h3>
+            <h3 className="font-bold text-slate-800 text-lg group-hover:text-teal-700 transition-colors">动词变形：ない形</h3>
             <p className="text-slate-400 text-sm group-hover:text-teal-500/80 transition-colors">Verb Nai-form (～ない)</p>
           </div>
           <div className="text-indigo-200 group-hover:text-teal-400 transition-colors transform group-hover:translate-x-1 duration-300">
