@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { ScriptStep } from './types';
 
@@ -11,6 +12,22 @@ interface DialogLayerProps {
 }
 
 const DialogLayer: React.FC<DialogLayerProps> = ({ step, canProceed, onNext, onPrev, isLast }) => {
+  const [displayedText, setDisplayedText] = useState('');
+
+  // Typewriter effect
+  useEffect(() => {
+    setDisplayedText('');
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i < step.text.length) {
+        setDisplayedText((prev) => prev + step.text.charAt(i));
+        i++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 30);
+    return () => clearInterval(timer);
+  }, [step.text]);
   
   // Dynamic color assignment based on speaker personality
   // Teal = Rin (Cool), Pink = Nadeshiko (Energetic), Orange/Slate = Narrator/Others
@@ -34,19 +51,15 @@ const DialogLayer: React.FC<DialogLayerProps> = ({ step, canProceed, onNext, onP
         </div>
 
         {/* Green Corner Brackets Decoration */}
-        {/* Top Left */}
         <div className="absolute top-4 left-4 w-6 h-6 border-t-[3px] border-l-[3px] border-[#6EE7B7] rounded-tl-lg pointer-events-none" />
-        {/* Top Right */}
         <div className="absolute top-4 right-4 w-6 h-6 border-t-[3px] border-r-[3px] border-[#6EE7B7] rounded-tr-lg pointer-events-none" />
-        {/* Bottom Left */}
         <div className="absolute bottom-4 left-4 w-6 h-6 border-b-[3px] border-l-[3px] border-[#6EE7B7] rounded-bl-lg pointer-events-none" />
-        {/* Bottom Right */}
         <div className="absolute bottom-4 right-4 w-6 h-6 border-b-[3px] border-r-[3px] border-[#6EE7B7] rounded-br-lg pointer-events-none" />
 
         {/* Text Content */}
         <div className="flex-grow overflow-y-auto mb-4 px-4 custom-scrollbar mt-2">
           <p className="text-xl md:text-2xl font-bold text-slate-700 leading-relaxed font-['Zen_Maru_Gothic']">
-            {step.text}
+            {displayedText}
           </p>
         </div>
 

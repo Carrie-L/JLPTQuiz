@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { ScriptStep } from './types';
 
@@ -11,6 +12,23 @@ interface DialogLayerProps {
 }
 
 const DialogLayer: React.FC<DialogLayerProps> = ({ step, canProceed, onNext, onPrev, isLast }) => {
+  const [displayedText, setDisplayedText] = useState('');
+
+  // Typewriter effect
+  useEffect(() => {
+    setDisplayedText('');
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i < step.text.length) {
+        setDisplayedText((prev) => prev + step.text.charAt(i));
+        i++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 30);
+    return () => clearInterval(timer);
+  }, [step.text]);
+
   const nameColorClass = step.speakerColor === 'pink' 
     ? "bg-[#FFDBE5] text-[#D84B79] border-[#F8BBD0]" 
     : "bg-[#E0F2F1] text-[#00695C] border-[#B2DFDB]";
@@ -34,7 +52,7 @@ const DialogLayer: React.FC<DialogLayerProps> = ({ step, canProceed, onNext, onP
 
         <div className="flex-grow overflow-y-auto mb-4 px-4 custom-scrollbar mt-2">
           <p className="text-xl md:text-2xl font-bold text-slate-700 leading-relaxed font-['Zen_Maru_Gothic']">
-            {step.text}
+            {displayedText}
           </p>
         </div>
 
