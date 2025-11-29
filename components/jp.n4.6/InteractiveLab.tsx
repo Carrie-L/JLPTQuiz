@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Check, X, Wand2, AlertTriangle, Lightbulb, UserX } from 'lucide-react';
+import { Check, X, Wand2, Lightbulb, UserPlus } from 'lucide-react';
 import { InteractiveConfig, LabMode } from './types';
 
 interface InteractiveLabProps {
@@ -59,9 +59,9 @@ const InteractiveLab: React.FC<InteractiveLabProps> = ({ config, onComplete }) =
 
   const renderVisualCard = () => (
     <div className={`bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-stone-100 p-8 mb-8 flex items-center gap-8 relative overflow-hidden ${cardWidthClass}`}>
-      <UserX className="absolute -top-2 -right-2 text-pink-100 opacity-50 transform rotate-12" size={100} />
+      <UserPlus className="absolute -top-2 -right-2 text-violet-100 opacity-50 transform rotate-12" size={100} />
       
-      <div className="bg-gradient-to-br from-pink-50 to-purple-50 text-purple-700 w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-bold border border-pink-100 shadow-inner relative z-10 shrink-0">
+      <div className="bg-gradient-to-br from-violet-50 to-indigo-50 text-indigo-700 w-20 h-20 rounded-2xl flex items-center justify-center text-3xl font-bold border border-violet-100 shadow-inner relative z-10 shrink-0">
         {config.targetVerb?.group}
       </div>
       <div className="relative z-10 flex-grow">
@@ -96,7 +96,7 @@ const InteractiveLab: React.FC<InteractiveLabProps> = ({ config, onComplete }) =
         
         <div className="bg-white/90 backdrop-blur-sm p-10 rounded-[2.5rem] w-full shadow-xl border-2 border-stone-100 relative overflow-hidden">
           <div className="text-stone-400 text-center mb-8 text-sm font-bold uppercase tracking-widest bg-stone-50 py-2 rounded-full mx-auto w-fit px-6">
-            被动变形 (Passive)
+            使役变形 (Causative)
           </div>
 
           <div className="flex items-center justify-center gap-4 mb-10">
@@ -109,7 +109,7 @@ const InteractiveLab: React.FC<InteractiveLabProps> = ({ config, onComplete }) =
                 className={`
                   w-full bg-stone-50 text-center text-3xl font-bold text-stone-700 p-4 rounded-2xl border-2 outline-none transition-all shadow-inner
                   placeholder:text-stone-300
-                  ${feedbackState === 'error' ? 'border-red-300 bg-red-50 animate-shake' : 'border-stone-200 focus:border-pink-400 focus:bg-white'}
+                  ${feedbackState === 'error' ? 'border-red-300 bg-red-50 animate-shake' : 'border-stone-200 focus:border-violet-400 focus:bg-white'}
                   ${feedbackState === 'success' ? 'border-emerald-400 bg-emerald-50 text-emerald-700' : ''}
                 `}
                 onKeyDown={(e) => {
@@ -125,7 +125,7 @@ const InteractiveLab: React.FC<InteractiveLabProps> = ({ config, onComplete }) =
               onClick={() => handleSubmit(userAnswer)}
               disabled={!userAnswer}
               className={`w-full py-5 rounded-2xl font-bold text-xl transition-all shadow-sm
-                ${feedbackState === 'success' ? 'bg-emerald-500 text-white' : 'bg-pink-500 text-white hover:bg-pink-600 hover:shadow-md'}
+                ${feedbackState === 'success' ? 'bg-emerald-500 text-white' : 'bg-violet-600 text-white hover:bg-violet-700 hover:shadow-md'}
                 disabled:opacity-50 disabled:cursor-not-allowed
               `}
             >
@@ -160,7 +160,7 @@ const InteractiveLab: React.FC<InteractiveLabProps> = ({ config, onComplete }) =
                 className={`
                   p-6 rounded-2xl text-left border-2 transition-all font-bold text-xl flex justify-between items-center
                   ${(feedbackState === 'success' || showAnswer) && isOptCorrect ? 'bg-emerald-50 border-emerald-400 text-emerald-800' : ''}
-                  ${feedbackState === 'error' && userAnswer === opt ? 'bg-red-50 border-red-300 text-red-700' : 'bg-white border-stone-100 text-stone-600 hover:border-pink-300 hover:shadow-md'}
+                  ${feedbackState === 'error' && userAnswer === opt ? 'bg-red-50 border-red-300 text-red-700' : 'bg-white border-stone-100 text-stone-600 hover:border-violet-300 hover:shadow-md'}
                 `}
               >
                 {opt}

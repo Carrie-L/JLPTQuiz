@@ -5,10 +5,10 @@ import DialogLayer from './DialogLayer';
 import { scriptData } from './data';
 
 interface GameEngineProps {
-    onExit: () => void;
+    onBack: () => void;
 }
 
-const GameEngine: React.FC<GameEngineProps> = ({ onExit }) => {
+const GameEngine: React.FC<GameEngineProps> = ({ onBack }) => {
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [isTaskCompleted, setIsTaskCompleted] = useState(false);
 
@@ -43,14 +43,14 @@ const GameEngine: React.FC<GameEngineProps> = ({ onExit }) => {
   };
 
   return (
-    <div className="relative w-full h-screen bg-[#111827] overflow-hidden flex flex-col font-sans text-slate-200">
+    <div className="relative w-full h-screen bg-[#F7F9F9] overflow-hidden flex flex-col font-sans text-slate-800">
       {/* Top Layer: Stage (Visuals/Labs) */}
       <div className="flex-1 relative z-0">
         <StageLayer 
             step={currentStep} 
             onTaskComplete={handleTaskComplete}
             onRestart={handleRestart}
-            onBack={onExit}
+            onBack={onBack}
         />
       </div>
 

@@ -13,9 +13,7 @@ interface DialogLayerProps {
 const DialogLayer: React.FC<DialogLayerProps> = ({ step, canProceed, onNext, onPrev, isLast }) => {
   const nameColorClass = step.speakerColor === 'pink' 
     ? "bg-[#FFDBE5] text-[#D84B79] border-[#F8BBD0]" 
-    : step.speakerColor === 'violet'
-    ? "bg-[#EDE7F6] text-[#5E35B1] border-[#D1C4E9]"
-    : "bg-[#E0F2F1] text-[#00695C] border-[#B2DFDB]"; // Teal default for Rin
+    : "bg-[#E0F2F1] text-[#00695C] border-[#B2DFDB]";
 
   return (
     <div className="w-full h-full max-w-5xl mx-auto relative group pt-6">
@@ -28,11 +26,11 @@ const DialogLayer: React.FC<DialogLayerProps> = ({ step, canProceed, onNext, onP
           </div>
         </div>
 
-        {/* Corner Brackets - Violet for this module */}
-        <div className="absolute top-4 left-4 w-6 h-6 border-t-[3px] border-l-[3px] border-violet-300 rounded-tl-lg pointer-events-none" />
-        <div className="absolute top-4 right-4 w-6 h-6 border-t-[3px] border-r-[3px] border-violet-300 rounded-tr-lg pointer-events-none" />
-        <div className="absolute bottom-4 left-4 w-6 h-6 border-b-[3px] border-l-[3px] border-violet-300 rounded-bl-lg pointer-events-none" />
-        <div className="absolute bottom-4 right-4 w-6 h-6 border-b-[3px] border-r-[3px] border-violet-300 rounded-br-lg pointer-events-none" />
+        {/* Corner Brackets - Pink for this module */}
+        <div className="absolute top-4 left-4 w-6 h-6 border-t-[3px] border-l-[3px] border-pink-300 rounded-tl-lg pointer-events-none" />
+        <div className="absolute top-4 right-4 w-6 h-6 border-t-[3px] border-r-[3px] border-pink-300 rounded-tr-lg pointer-events-none" />
+        <div className="absolute bottom-4 left-4 w-6 h-6 border-b-[3px] border-l-[3px] border-pink-300 rounded-bl-lg pointer-events-none" />
+        <div className="absolute bottom-4 right-4 w-6 h-6 border-b-[3px] border-r-[3px] border-pink-300 rounded-br-lg pointer-events-none" />
 
         <div className="flex-grow overflow-y-auto mb-4 px-4 custom-scrollbar mt-2">
           <p className="text-xl md:text-2xl font-bold text-slate-700 leading-relaxed font-['Zen_Maru_Gothic']">
@@ -58,7 +56,7 @@ const DialogLayer: React.FC<DialogLayerProps> = ({ step, canProceed, onNext, onP
               className={`
                 group/btn relative flex items-center gap-1 font-bold text-lg tracking-wider transition-all
                 ${canProceed 
-                  ? 'text-violet-500 cursor-pointer hover:tracking-widest' 
+                  ? 'text-pink-500 cursor-pointer hover:tracking-widest' 
                   : 'text-slate-300 cursor-not-allowed'}
               `}
             >

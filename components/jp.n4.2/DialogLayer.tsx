@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Flame } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface DialogLayerProps {
   speaker: string;
@@ -8,7 +8,6 @@ interface DialogLayerProps {
   text: string;
   onNext: () => void;
   canProceed: boolean;
-  isLast?: boolean; // Added optional prop to satisfy interface compatibility if needed, though not strictly used in this version's logic
 }
 
 const DialogLayer: React.FC<DialogLayerProps> = ({ 
@@ -35,9 +34,9 @@ const DialogLayer: React.FC<DialogLayerProps> = ({
   }, [text]);
 
   const colorMap: Record<string, { bg: string, text: string, border: string }> = {
-    pink: { bg: 'bg-[#4A2633]', text: 'text-pink-200', border: 'border-pink-800' }, // Nadeshiko (Night)
-    blue: { bg: 'bg-[#1E293B]', text: 'text-blue-200', border: 'border-blue-800' }, // Rin (Night)
-    green: { bg: 'bg-[#064E3B]', text: 'text-emerald-200', border: 'border-emerald-800' }, // System (Night)
+    pink: { bg: 'bg-[#FFF0F5]', text: 'text-rose-600', border: 'border-rose-300' }, // Nadeshiko
+    blue: { bg: 'bg-[#F0F8FF]', text: 'text-blue-600', border: 'border-blue-300' }, // Rin
+    green: { bg: 'bg-[#F0FFF4]', text: 'text-emerald-600', border: 'border-emerald-300' }, // System
   };
 
   const theme = colorMap[speakerColor] || colorMap.pink;
@@ -49,34 +48,31 @@ const DialogLayer: React.FC<DialogLayerProps> = ({
           pointer-events-auto
           relative w-full max-w-4xl 
           ${theme.bg}
-          rounded-xl shadow-[0_0_30px_rgba(234,88,12,0.15)]
-          border-2 ${theme.border}
+          rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)]
+          border-4 ${theme.border}
           min-h-[160px] flex flex-col justify-between
           transition-all duration-500
         `}
       >
-        {/* Fire Glow Effect */}
-        <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-32 h-32 bg-orange-500/10 blur-[50px] rounded-full pointer-events-none"></div>
-
         {/* Floating Icons */}
-        <div className="absolute -top-5 right-5 text-2xl animate-pulse text-orange-400">
-            🔥
+        <div className="absolute -top-5 right-5 text-3xl animate-bounce" style={{ animationDuration: '3s' }}>
+            {speakerColor === 'blue' ? '🛵' : '⛺'}
         </div>
 
         {/* Name Tag */}
         <div className={`
-          absolute -top-4 left-6 px-4 py-1 
-          bg-[#FFFDF5] border-2 border-orange-200
-          rounded-sm shadow-lg z-10 transform rotate-1
+          absolute -top-4 left-6 px-6 py-1 
+          bg-white border-2 ${theme.border} 
+          rounded-xl shadow-sm z-10
         `}>
-          <span className={`font-bold text-lg tracking-wider text-slate-800`}>
+          <span className={`font-bold text-lg tracking-wider ${theme.text}`}>
             {speaker}
           </span>
         </div>
 
         {/* Text */}
         <div className="px-8 pt-8 pb-4 relative z-10">
-          <p className={`text-lg md:text-xl font-medium leading-relaxed font-sans ${theme.text} drop-shadow-md`}>
+          <p className={`text-lg md:text-xl font-medium leading-relaxed font-sans ${theme.text} drop-shadow-sm`}>
             {displayedText}
           </p>
         </div>
@@ -90,8 +86,8 @@ const DialogLayer: React.FC<DialogLayerProps> = ({
               group flex items-center gap-2 px-5 py-2 rounded-lg
               font-bold transition-all duration-300 border-2
               ${canProceed 
-                ? 'bg-orange-500/20 text-orange-200 border-orange-500/50 hover:bg-orange-500 hover:text-white shadow-sm' 
-                : 'bg-black/20 text-white/20 border-transparent cursor-not-allowed'}
+                ? 'bg-white text-slate-600 border-slate-200 hover:bg-orange-50 hover:border-orange-300 hover:-translate-y-1 shadow-sm' 
+                : 'bg-slate-100 text-slate-300 border-transparent cursor-not-allowed'}
             `}
           >
             <span>Next</span>

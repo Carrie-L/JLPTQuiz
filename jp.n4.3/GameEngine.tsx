@@ -5,10 +5,10 @@ import DialogLayer from './DialogLayer';
 import { scriptData } from './data';
 
 interface GameEngineProps {
-    onExit: () => void;
+    onBack: () => void;
 }
 
-const GameEngine: React.FC<GameEngineProps> = ({ onExit }) => {
+const GameEngine: React.FC<GameEngineProps> = ({ onBack }) => {
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [isTaskCompleted, setIsTaskCompleted] = useState(false);
 
@@ -50,7 +50,7 @@ const GameEngine: React.FC<GameEngineProps> = ({ onExit }) => {
             step={currentStep} 
             onTaskComplete={handleTaskComplete}
             onRestart={handleRestart}
-            onBack={onExit}
+            onBack={onBack}
         />
       </div>
 

@@ -49,15 +49,15 @@ const GameEngine: React.FC<GameEngineProps> = ({ onExit }) => {
 
   return (
     <div className="relative w-full h-screen bg-[#FFFDF5] overflow-hidden flex flex-col font-['Zen_Maru_Gothic']">
-      {/* Background Decor - Sunset / Evening for Passive Form Mood */}
+      {/* Background Decor - Violet/Indigo Theme */}
       <div className="absolute inset-0 pointer-events-none">
-         <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-indigo-100/50 rounded-full blur-[100px]" />
-         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-pink-50/60 rounded-full blur-[80px]" />
+         <div className="absolute -top-20 right-0 w-[500px] h-[500px] bg-violet-100/50 rounded-full blur-[100px]" />
+         <div className="absolute bottom-[-100px] left-[-100px] w-[600px] h-[600px] bg-indigo-50/60 rounded-full blur-[120px]" />
       </div>
 
       <button 
         onClick={onExit}
-        className="absolute top-4 left-4 z-50 flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm border-2 border-pink-100 rounded-full text-pink-700 font-bold hover:bg-pink-50 hover:border-pink-200 hover:shadow-md transition-all text-sm group"
+        className="absolute top-4 left-4 z-50 flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm border-2 border-violet-100 rounded-full text-violet-700 font-bold hover:bg-violet-50 hover:border-violet-200 hover:shadow-md transition-all text-sm group"
       >
         <Tent size={16} className="group-hover:rotate-12 transition-transform"/>
         回到大厅

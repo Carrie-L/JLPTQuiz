@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScriptStep, ViewType } from './types';
 import InteractiveLab from './InteractiveLab';
-import { Book, Trees, Briefcase, Zap } from 'lucide-react';
+import { Book, Tent, Trees, CloudRain, HeartCrack } from 'lucide-react';
 
 interface StageLayerProps {
   step: ScriptStep;
@@ -13,8 +13,8 @@ const StageLayer: React.FC<StageLayerProps> = ({ step, onComplete }) => {
 
   const BackgroundDecorations = () => (
     <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
-      <Trees className="absolute bottom-[-10px] left-4 text-violet-100 opacity-60" size={120} />
-      <Zap className="absolute top-10 right-10 text-yellow-100 opacity-60" size={100} />
+      <Trees className="absolute bottom-[-10px] left-4 text-pink-100 opacity-60" size={120} />
+      <CloudRain className="absolute top-10 right-10 text-indigo-100 opacity-40" size={100} />
     </div>
   );
 
@@ -27,8 +27,8 @@ const StageLayer: React.FC<StageLayerProps> = ({ step, onComplete }) => {
                <BackgroundDecorations />
                
                <div className="text-center z-10 relative flex flex-col items-center">
-                 <div className="bg-white p-6 rounded-full inline-block mb-4 shadow-sm text-violet-600">
-                    <Briefcase size={48} className="opacity-80" />
+                 <div className="bg-white p-6 rounded-full inline-block mb-4 shadow-sm text-pink-500">
+                    <HeartCrack size={48} className="opacity-80" />
                  </div>
                  <p className="text-stone-500 font-medium px-8 font-serif text-lg">{viewContent.imagePrompt}</p>
                </div>
@@ -44,8 +44,8 @@ const StageLayer: React.FC<StageLayerProps> = ({ step, onComplete }) => {
       case ViewType.GRAMMAR_EXPLAIN:
         return (
           <div className="w-full max-w-4xl bg-[#FFFEF5] rounded-3xl shadow-xl overflow-hidden border border-stone-200 relative z-10">
-            {/* Header - Violet for Causative */}
-            <div className="bg-[#7E57C2] p-6 flex items-center gap-3 relative overflow-hidden">
+            {/* Header - Purple/Pink for Passive */}
+            <div className="bg-[#BA68C8] p-6 flex items-center gap-3 relative overflow-hidden">
                <div className="absolute inset-0 bg-white/10 pattern-dots" />
               <Book className="text-white relative z-10" />
               <h2 className="text-white text-xl font-bold relative z-10">{viewContent.grammarRule?.title}</h2>
@@ -56,7 +56,7 @@ const StageLayer: React.FC<StageLayerProps> = ({ step, onComplete }) => {
                   <div className="space-y-4 mb-8">
                     {viewContent.grammarRule?.content.map((rule, idx) => (
                       <div key={idx} className="flex items-start gap-4 p-5 bg-white/80 backdrop-blur-sm rounded-xl border border-stone-100 shadow-sm">
-                        <div className="w-8 h-8 rounded-full bg-[#B39DDB] text-white flex items-center justify-center font-bold text-base shrink-0">
+                        <div className="w-8 h-8 rounded-full bg-[#E1BEE7] text-white flex items-center justify-center font-bold text-base shrink-0">
                           {idx + 1}
                         </div>
                         <p className="text-xl text-stone-700 font-medium">{rule}</p>
@@ -65,10 +65,10 @@ const StageLayer: React.FC<StageLayerProps> = ({ step, onComplete }) => {
                   </div>
                   
                   <div className="space-y-3 bg-white/60 p-6 rounded-2xl border border-stone-100">
-                    <h3 className="text-sm font-bold text-[#7E57C2] uppercase tracking-widest mb-2 border-b border-[#7E57C2]/20 pb-2">例句 (Examples)</h3>
+                    <h3 className="text-sm font-bold text-[#BA68C8] uppercase tracking-widest mb-2 border-b border-[#BA68C8]/20 pb-2">例句 (Examples)</h3>
                     {viewContent.grammarRule?.examples.map((ex, idx) => (
                       <div key={idx} className="flex justify-between items-center p-3 hover:bg-white transition-colors rounded-lg group">
-                        <span className="text-xl font-bold text-stone-700 group-hover:text-[#673AB7] transition-colors">{ex.jp}</span>
+                        <span className="text-xl font-bold text-stone-700 group-hover:text-[#AB47BC] transition-colors">{ex.jp}</span>
                         <span className="text-stone-400 font-serif italic text-base">{ex.cn}</span>
                       </div>
                     ))}

@@ -8,7 +8,6 @@ interface DialogLayerProps {
   text: string;
   onNext: () => void;
   canProceed: boolean;
-  isLast?: boolean; // Added optional prop to satisfy interface compatibility if needed, though not strictly used in this version's logic
 }
 
 const DialogLayer: React.FC<DialogLayerProps> = ({ 

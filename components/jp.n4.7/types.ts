@@ -32,7 +32,7 @@ export interface InteractiveConfig {
 export interface ScriptStep {
   id: number;
   speaker: string;
-  speakerColor: 'teal' | 'orange' | 'pink' | 'slate';
+  speakerColor: 'teal' | 'orange' | 'pink' | 'violet' | 'amber'; // Added amber for this lesson
   text: string;
   viewType: ViewType;
   viewContent: {

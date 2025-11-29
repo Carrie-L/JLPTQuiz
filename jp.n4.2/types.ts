@@ -11,7 +11,7 @@ export interface ScriptStep {
     imagePrompt?: string;      
     grammarRule?: string;      
     interactiveConfig?: {
-        mode: "group2_te" | "group1_tte" | "group1_ite_nde" | "challenge_mixed"; 
+        mode: "group2_drill" | "group1_drill" | "irregular_drill" | "sentence_build"; 
         initialState?: any;
     };   
   };
