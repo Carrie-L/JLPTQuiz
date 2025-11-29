@@ -8,6 +8,7 @@ import GameEngine44 from './components/jp.n4.4/GameEngine';
 import GameEngine45 from './components/jp.n4.5/GameEngine';
 import GameEngine46 from './components/jp.n4.6/GameEngine';
 import GameEngine47 from './components/jp.n4.7/GameEngine';
+import GameEngine48 from './components/jp.n4.8/GameEngine';
 
 const App = () => {
   const [activeModule, setActiveModule] = useState<string | null>(null);
@@ -32,6 +33,9 @@ const App = () => {
   }
   if (activeModule === 'jp.n4.7') {
     return <GameEngine47 onExit={() => setActiveModule(null)} />;
+  }
+  if (activeModule === 'jp.n4.8') {
+    return <GameEngine48 onExit={() => setActiveModule(null)} />;
   }
 
   return (
@@ -183,6 +187,24 @@ const App = () => {
             <p className="text-slate-400 text-sm group-hover:text-orange-500/80 transition-colors">Causative Passive (～させられる)</p>
           </div>
           <div className="text-orange-200 group-hover:text-orange-400 transition-colors transform group-hover:translate-x-1 duration-300">
+             <Play size={24} fill="currentColor" />
+          </div>
+        </div>
+
+        {/* Card 08: Cyan - Ta Form */}
+        <div 
+          onClick={() => setActiveModule('jp.n4.8')}
+          className="group bg-white border-2 border-cyan-100 hover:border-cyan-400 rounded-2xl p-4 flex items-center gap-4 cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 relative overflow-hidden"
+        >
+          <div className="absolute right-0 top-0 bottom-0 w-1 bg-cyan-400 scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom" />
+          <div className="w-12 h-12 shrink-0 bg-cyan-50 group-hover:bg-cyan-100 rounded-full flex items-center justify-center text-cyan-500 group-hover:text-cyan-600 font-bold text-lg font-['Zen_Maru_Gothic']">
+             08
+          </div>
+          <div className="flex-grow">
+            <h3 className="font-bold text-slate-800 text-lg group-hover:text-cyan-700 transition-colors">动词变形：た形</h3>
+            <p className="text-slate-400 text-sm group-hover:text-cyan-500/80 transition-colors">Ta Form (～た Past Tense)</p>
+          </div>
+          <div className="text-cyan-200 group-hover:text-cyan-400 transition-colors transform group-hover:translate-x-1 duration-300">
              <Play size={24} fill="currentColor" />
           </div>
         </div>
