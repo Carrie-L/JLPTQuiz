@@ -13,6 +13,8 @@ import GameEngine49 from './components/jp.n4.9/GameEngine';
 import GameEngine410 from './components/jp.n4.10/GameEngine';
 import GameEngine411 from './components/jp.n4.11/GameEngine';
 import GameEngine412 from './components/jp.n4.12/GameEngine';
+import GameEngine413 from './components/jp.n4.13/GameEngine';
+import GameEngine414 from './components/jp.n4.14/GameEngine';
 
 const App = () => {
   const [activeModule, setActiveModule] = useState<string | null>(null);
@@ -52,6 +54,12 @@ const App = () => {
   }
   if (activeModule === 'jp.n4.12') {
     return <GameEngine412 onExit={() => setActiveModule(null)} />;
+  }
+  if (activeModule === 'jp.n4.13') {
+    return <GameEngine413 onExit={() => setActiveModule(null)} />;
+  }
+  if (activeModule === 'jp.n4.14') {
+    return <GameEngine414 onExit={() => setActiveModule(null)} />;
   }
 
   return (
@@ -293,6 +301,42 @@ const App = () => {
             <p className="text-slate-400 text-sm group-hover:text-fuchsia-500/80 transition-colors">Volitional Form (Let's/Shall we)</p>
           </div>
           <div className="text-fuchsia-200 group-hover:text-fuchsia-400 transition-colors transform group-hover:translate-x-1 duration-300">
+             <Play size={24} fill="currentColor" />
+          </div>
+        </div>
+
+        {/* Card 13: Indigo - Conditional Form */}
+        <div 
+          onClick={() => setActiveModule('jp.n4.13')}
+          className="group bg-white border-2 border-indigo-100 hover:border-indigo-400 rounded-2xl p-4 flex items-center gap-4 cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 relative overflow-hidden"
+        >
+          <div className="absolute right-0 top-0 bottom-0 w-1 bg-indigo-500 scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom" />
+          <div className="w-12 h-12 shrink-0 bg-indigo-50 group-hover:bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 group-hover:text-indigo-700 font-bold text-lg font-['Zen_Maru_Gothic']">
+             13
+          </div>
+          <div className="flex-grow">
+            <h3 className="font-bold text-slate-800 text-lg group-hover:text-indigo-700 transition-colors">动词变形：条件形</h3>
+            <p className="text-slate-400 text-sm group-hover:text-indigo-500/80 transition-colors">Conditional Form (～たら If/When)</p>
+          </div>
+          <div className="text-indigo-200 group-hover:text-indigo-400 transition-colors transform group-hover:translate-x-1 duration-300">
+             <Play size={24} fill="currentColor" />
+          </div>
+        </div>
+
+        {/* Card 14: Sky - Conditional Form (Ba) */}
+        <div 
+          onClick={() => setActiveModule('jp.n4.14')}
+          className="group bg-white border-2 border-sky-100 hover:border-sky-400 rounded-2xl p-4 flex items-center gap-4 cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 relative overflow-hidden"
+        >
+          <div className="absolute right-0 top-0 bottom-0 w-1 bg-sky-500 scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom" />
+          <div className="w-12 h-12 shrink-0 bg-sky-50 group-hover:bg-sky-100 rounded-full flex items-center justify-center text-sky-600 group-hover:text-sky-700 font-bold text-lg font-['Zen_Maru_Gothic']">
+             14
+          </div>
+          <div className="flex-grow">
+            <h3 className="font-bold text-slate-800 text-lg group-hover:text-sky-700 transition-colors">动词变形：条件形 ～ば</h3>
+            <p className="text-slate-400 text-sm group-hover:text-sky-500/80 transition-colors">Conditional Form (～ば If...)</p>
+          </div>
+          <div className="text-sky-200 group-hover:text-sky-400 transition-colors transform group-hover:translate-x-1 duration-300">
              <Play size={24} fill="currentColor" />
           </div>
         </div>
