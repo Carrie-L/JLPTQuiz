@@ -9,6 +9,7 @@ import GameEngine45 from './components/jp.n4.5/GameEngine';
 import GameEngine46 from './components/jp.n4.6/GameEngine';
 import GameEngine47 from './components/jp.n4.7/GameEngine';
 import GameEngine48 from './components/jp.n4.8/GameEngine';
+import GameEngine49 from './components/jp.n4.9/GameEngine';
 
 const App = () => {
   const [activeModule, setActiveModule] = useState<string | null>(null);
@@ -36,6 +37,9 @@ const App = () => {
   }
   if (activeModule === 'jp.n4.8') {
     return <GameEngine48 onExit={() => setActiveModule(null)} />;
+  }
+  if (activeModule === 'jp.n4.9') {
+    return <GameEngine49 onExit={() => setActiveModule(null)} />;
   }
 
   return (
@@ -205,6 +209,24 @@ const App = () => {
             <p className="text-slate-400 text-sm group-hover:text-cyan-500/80 transition-colors">Ta Form (～た Past Tense)</p>
           </div>
           <div className="text-cyan-200 group-hover:text-cyan-400 transition-colors transform group-hover:translate-x-1 duration-300">
+             <Play size={24} fill="currentColor" />
+          </div>
+        </div>
+
+        {/* Card 09: Lime - Dictionary Form */}
+        <div 
+          onClick={() => setActiveModule('jp.n4.9')}
+          className="group bg-white border-2 border-lime-100 hover:border-lime-400 rounded-2xl p-4 flex items-center gap-4 cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 relative overflow-hidden"
+        >
+          <div className="absolute right-0 top-0 bottom-0 w-1 bg-lime-400 scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom" />
+          <div className="w-12 h-12 shrink-0 bg-lime-50 group-hover:bg-lime-100 rounded-full flex items-center justify-center text-lime-600 group-hover:text-lime-700 font-bold text-lg font-['Zen_Maru_Gothic']">
+             09
+          </div>
+          <div className="flex-grow">
+            <h3 className="font-bold text-slate-800 text-lg group-hover:text-lime-700 transition-colors">动词变形：辞书形</h3>
+            <p className="text-slate-400 text-sm group-hover:text-lime-500/80 transition-colors">Dictionary Form (る形 / Basic)</p>
+          </div>
+          <div className="text-lime-200 group-hover:text-lime-400 transition-colors transform group-hover:translate-x-1 duration-300">
              <Play size={24} fill="currentColor" />
           </div>
         </div>
