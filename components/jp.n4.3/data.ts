@@ -16,7 +16,7 @@ export const scriptData: ScriptStep[] = [
     id: 2,
     speaker: "凛 (Rin)",
     speakerColor: "blue",
-    text: "你是想说「つけてください」(Please light it) 吧？请求别人做某事，要用动词的「て形」(Te-form)。",
+    text: "你是想说「つけてください」(请点火) 吧？请求别人做某事，要用动词的「て形」。",
     viewType: "IMAGE",
     viewContent: {
       imagePrompt: "Rin lighting a campfire. The fire illuminates her face warmly.",
@@ -26,24 +26,24 @@ export const scriptData: ScriptStep[] = [
     id: 3,
     speaker: "凛 (Rin)",
     speakerColor: "blue",
-    text: "二类动词（Ru-verbs）最简单。和可能态一样，直接去掉 `ru`，加上 `te`。",
+    text: "二类动词（一段动词）最简单。和可能态一样，直接去掉 `る`，加上 `て`。",
     viewType: "GRAMMAR_EXPLAIN",
     viewContent: {
-      grammarRule: `// 二类动词 (Group 2)
-// 规则：去掉 ru + te
+      grammarRule: `// 二类动词 (一段)
+// 规则：去掉 る + て
 
-見る (Miru) - 看
+見る (みる) - 看
   ⬇️
-見 (Mi) + て (te)
+見 (み) + て
   ⬇️
-見て (Mite) = 看...`,
+見て (みて) = 看...`,
     },
   },
   {
     id: 4,
     speaker: "系统提示",
     speakerColor: "green",
-    text: "【手写练习】：请将「Miru」(看) 变成て形。比如「看着星星」的“看”。",
+    text: "【手写练习】：请将「見る」(看) 变成て形。比如「看着星星」的“看”。",
     viewType: "INTERACTIVE_LAB",
     viewContent: {
       interactiveConfig: { mode: "group2_te" },
@@ -53,7 +53,7 @@ export const scriptData: ScriptStep[] = [
     id: 5,
     speaker: "抚子 (Nadeshiko)",
     speakerColor: "pink",
-    text: "那是简单的！但是「待つ」(Matsu - 等待) 呢？我想让你「等一下」。",
+    text: "那是简单的！但是「待つ」(まつ - 等待) 呢？我想让你「等一下」。",
     viewType: "IMAGE",
     viewContent: {
       imagePrompt: "Nadeshiko running to get something, waving hand.",
@@ -63,15 +63,15 @@ export const scriptData: ScriptStep[] = [
     id: 6,
     speaker: "凛 (Rin)",
     speakerColor: "blue",
-    text: "一类动词（U-verbs）比较复杂，要看词尾。凡是 `u` `tsu` `ru` 结尾的，变成促音 `tte`。",
+    text: "一类动词（五段动词）比较复杂，要看词尾。凡是 `u` `tsu` `ru` (う/つ/る) 结尾的，变成促音 `って`。",
     viewType: "GRAMMAR_EXPLAIN",
     viewContent: {
-      grammarRule: `// 一类动词 (Group 1 - 促音变)
-// 规则：u, tsu, ru ➡️ tte
+      grammarRule: `// 一类动词 (促音变)
+// 规则：う, つ, る ➡️ って
 
-待つ (Matsu) - 等
-  ⬇️ tsu 变 tte
-待って (Matte) = 等等...
+待つ (まつ) - 等
+  ⬇️ つ 变 って
+待って (まって) = 等等...
 
 (例：待ってください)`,
     },
@@ -80,7 +80,7 @@ export const scriptData: ScriptStep[] = [
     id: 7,
     speaker: "系统提示",
     speakerColor: "green",
-    text: "【手写练习】：露营要搭帐篷。「立つ」(Tatsu - 站立/建立) 的て形是什么？",
+    text: "【手写练习】：露营要搭帐篷。「立つ」(たつ - 站立/建立) 的て形是什么？",
     viewType: "INTERACTIVE_LAB",
     viewContent: {
       interactiveConfig: { mode: "group1_tte" },
@@ -93,21 +93,21 @@ export const scriptData: ScriptStep[] = [
     text: "接下来是 `ku` 变 `ite`，`gu` 变 `ide`。还有 `mu` `bu` `nu` 变 `nde`。",
     viewType: "GRAMMAR_EXPLAIN",
     viewContent: {
-      grammarRule: `// 一类动词 (Group 1 - 音变)
+      grammarRule: `// 一类动词 (音变)
 
-書く (Kaku) ➡️ 書いて (Kaite)
-泳ぐ (Oyogu) ➡️ 泳いで (Oyoide)
+書く (かく) ➡️ 書いて (かいて)
+泳ぐ (およぐ) ➡️ 泳いで (およいで)
 
-読む (Yomu) ➡️ 読んで (Yonde)
-遊ぶ (Asobu) ➡️ 遊んで (Asonde)
-死ぬ (Shinu) ➡️ 死んで (Shinde)`,
+読む (よむ) ➡️ 読んで (よんで)
+遊ぶ (あそぶ) ➡️ 遊んで (あそんで)
+死ぬ (しぬ) ➡️ 死んで (しんで)`,
     },
   },
   {
     id: 9,
     speaker: "系统提示",
     speakerColor: "green",
-    text: "【手写练习】：写日记的「書く」(Kaku - 写)。请变成て形。",
+    text: "【手写练习】：写日记的「書く」(かく - 写)。请变成て形。",
     viewType: "INTERACTIVE_LAB",
     viewContent: {
       interactiveConfig: { mode: "group1_ite_nde" },
@@ -127,7 +127,7 @@ export const scriptData: ScriptStep[] = [
     id: 11,
     speaker: "系统提示",
     speakerColor: "green",
-    text: "【终极挑战】：喝东西的「飲む」(Nomu)。请变成て形，说“请喝”。",
+    text: "【终极挑战】：喝东西的「飲む」(のむ)。请变成て形，说“请喝”。",
     viewType: "INTERACTIVE_LAB",
     viewContent: {
       interactiveConfig: { mode: "challenge_mixed" },
@@ -137,7 +137,7 @@ export const scriptData: ScriptStep[] = [
     id: 12,
     speaker: "凛 (Rin)",
     speakerColor: "blue",
-    text: "喝吧 (Nonde)。今晚的星星很漂亮呢。",
+    text: "喝吧 (のんで)。今晚的星星很漂亮呢。",
     viewType: "VICTORY",
     viewContent: {},
   },

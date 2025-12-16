@@ -66,7 +66,7 @@ const HandwritingInput: React.FC<{
 
       {/* Verb Display */}
       <div className="text-center py-2">
-          <div className="text-xs font-bold text-slate-400 tracking-widest uppercase mb-1">Dictionary Form</div>
+          <div className="text-xs font-bold text-slate-400 tracking-widest uppercase mb-1">辞书形 (Dictionary Form)</div>
           <div className="text-4xl font-black text-slate-800 tracking-tight">{verb}</div>
       </div>
 
@@ -90,7 +90,7 @@ const HandwritingInput: React.FC<{
                       value={input}
                       onChange={handleChange}
                       onKeyDown={handleKeyDown}
-                      placeholder="Type here..."
+                      placeholder="请输入..."
                       disabled={isCompleted}
                       autoComplete="off"
                   />
@@ -110,7 +110,7 @@ const HandwritingInput: React.FC<{
               {/* Grammar Tag (Desktop) */}
               {grammarRule && (
                   <div className="hidden md:flex flex-col items-center justify-center bg-orange-50 px-3 h-14 rounded-xl border-2 border-orange-100 min-w-[80px]">
-                      <span className="text-[10px] text-orange-400 font-bold uppercase leading-none mb-0.5">Rule</span>
+                      <span className="text-[10px] text-orange-400 font-bold uppercase leading-none mb-0.5">规则</span>
                       <span className="text-sm font-bold text-orange-600 leading-none">{grammarRule}</span>
                   </div>
               )}
@@ -119,7 +119,7 @@ const HandwritingInput: React.FC<{
           {/* Grammar Tag (Mobile) */}
           {grammarRule && (
               <div className="md:hidden flex items-center justify-center gap-2 text-xs font-bold text-orange-500 bg-orange-50 py-1 rounded-lg">
-                  <span className="uppercase opacity-60">Rule:</span> {grammarRule}
+                  <span className="uppercase opacity-60">规则:</span> {grammarRule}
               </div>
           )}
           
@@ -134,7 +134,7 @@ const HandwritingInput: React.FC<{
                     : 'bg-slate-800 hover:bg-slate-700 text-white shadow-lg shadow-slate-200'}
             `}
           >
-              {isCompleted ? 'Correct!' : 'Check Answer'} 
+              {isCompleted ? '回答正确!' : '检查'} 
               {!isCompleted && <ArrowRight size={18} />}
           </button>
 
@@ -167,16 +167,16 @@ const InteractiveLab: React.FC<InteractiveLabProps> = ({ mode, onTaskComplete })
                   <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto text-orange-500 shadow-sm border-4 border-white">
                       <Utensils size={32} />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-700">二类动词练习 (Ru-Verb)</h3>
-                  <p className="text-slate-500 text-sm">Target: Potential Form (Able to...)</p>
+                  <h3 className="text-xl font-bold text-slate-700">二类动词练习</h3>
+                  <p className="text-slate-500 text-sm">目标：可能态 (能...)</p>
               </div>
 
               <HandwritingInput 
-                  label="Drill #1"
-                  verb="食べる (Taberu)"
+                  label="练习 1"
+                  verb="食べる (たべる)"
                   validAnswers={['taberareru', '食べられる', 'たべられる']}
-                  grammarRule="ru → rareru"
-                  hint="Hint: Drop 'ru', add 'rareru'"
+                  grammarRule="る → られる"
+                  hint="提示：去掉 'る'，加上 'られる'"
                   onComplete={handleComplete}
               />
           </div>
@@ -190,16 +190,16 @@ const InteractiveLab: React.FC<InteractiveLabProps> = ({ mode, onTaskComplete })
                   <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto text-blue-500 shadow-sm border-4 border-white">
                       <Map size={32} />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-700">一类动词练习 (U-Verb)</h3>
-                  <p className="text-slate-500 text-sm">Target: Potential Form (Able to...)</p>
+                  <h3 className="text-xl font-bold text-slate-700">一类动词练习</h3>
+                  <p className="text-slate-500 text-sm">目标：可能态 (能...)</p>
               </div>
 
               <HandwritingInput 
-                  label="Drill #2"
-                  verb="読む (Yomu)"
+                  label="练习 2"
+                  verb="読む (よむ)"
                   validAnswers={['yomeru', '読める', 'よめる']}
-                  grammarRule="u → e + ru"
-                  hint="Hint: Change 'mu' to 'me', add 'ru'"
+                  grammarRule="u段 → e段 + る"
+                  hint="提示：将词尾 'む(mu)' 变成 'め(me)'，再加 'る'"
                   onComplete={handleComplete}
               />
           </div>
@@ -213,16 +213,16 @@ const InteractiveLab: React.FC<InteractiveLabProps> = ({ mode, onTaskComplete })
                   <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto text-purple-500 shadow-sm border-4 border-white">
                       <Zap size={32} />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-700">不规则动词 (Irregular)</h3>
-                  <p className="text-slate-500 text-sm">Target: Potential Form (Able to...)</p>
+                  <h3 className="text-xl font-bold text-slate-700">不规则动词 (三类)</h3>
+                  <p className="text-slate-500 text-sm">目标：可能态 (能...)</p>
               </div>
 
               <HandwritingInput 
-                  label="Drill #3"
-                  verb="する (Suru)"
+                  label="练习 3"
+                  verb="する (suru)"
                   validAnswers={['dekiru', '出来る', 'できる']}
-                  grammarRule="Irregular"
-                  hint="Hint: It changes completely to 'Dekiru'"
+                  grammarRule="不规则"
+                  hint="提示：整个变成 'できる' (dekiru)"
                   onComplete={handleComplete}
               />
           </div>
@@ -236,21 +236,21 @@ const InteractiveLab: React.FC<InteractiveLabProps> = ({ mode, onTaskComplete })
                   <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto text-yellow-600 shadow-sm border-4 border-white">
                       <ChefHat size={32} />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-700">终极挑战 (Challenge)</h3>
-                  <p className="text-slate-500 text-sm">Fill in the blank</p>
+                  <h3 className="text-xl font-bold text-slate-700">终极挑战</h3>
+                  <p className="text-slate-500 text-sm">填空</p>
               </div>
 
               <div className="w-full max-w-md bg-white p-4 rounded-2xl shadow-sm border-2 border-slate-100 text-center mb-2">
                   <p className="text-lg font-bold text-slate-700">カレーを _____ 。</p>
-                  <p className="text-xs text-slate-400 uppercase tracking-widest mt-1">I can make curry</p>
+                  <p className="text-xs text-slate-400 uppercase tracking-widest mt-1">我能做咖喱</p>
               </div>
 
               <HandwritingInput 
-                  label="Final Drill"
-                  verb="作る (Tsukuru)"
+                  label="最终挑战"
+                  verb="作る (つくる)"
                   validAnswers={['tsukureru', '作れる', 'つくれる']}
-                  grammarRule="u → e + ru"
-                  hint="Hint: Group 1 Verb (u -> e)"
+                  grammarRule="u段 → e段 + る"
+                  hint="提示：一类动词 (ru -> re)"
                   onComplete={handleComplete}
               />
           </div>

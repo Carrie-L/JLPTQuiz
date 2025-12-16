@@ -53,7 +53,7 @@ const StageLayer: React.FC<StageLayerProps> = ({ step, onTaskComplete, onRestart
             <div className="w-full max-w-2xl bg-[#2D3748] rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden border-4 border-[#4A5568] relative">
                {/* Blackboard header */}
                <div className="bg-[#1A202C] px-4 py-2 border-b border-slate-600 flex justify-between items-center">
-                   <span className="text-slate-400 text-xs tracking-widest uppercase">Rin's Night Class</span>
+                   <span className="text-slate-400 text-xs tracking-widest uppercase">凛的夜间讲座</span>
                    <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
                </div>
 

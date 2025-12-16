@@ -51,22 +51,22 @@ const VictoryScreen: React.FC<VictoryScreenProps> = ({ onRestart, onBack }) => {
             <div className="flex items-center gap-3 border-b border-slate-700 pb-2">
                 <span className="text-lg">👀</span>
                 <div>
-                    <div className="font-bold text-slate-300 text-sm">Ru-Verbs</div>
-                    <div className="text-slate-500 text-xs">Drop ru + te</div>
+                    <div className="font-bold text-slate-300 text-sm">二类动词 (Ru)</div>
+                    <div className="text-slate-500 text-xs">去掉 る + て</div>
                 </div>
             </div>
             <div className="flex items-center gap-3 border-b border-slate-700 pb-2">
                 <span className="text-lg">👣</span>
                 <div>
-                    <div className="font-bold text-slate-300 text-sm">U-Verbs (Tte)</div>
-                    <div className="text-slate-500 text-xs">u, tsu, ru -> tte</div>
+                    <div className="font-bold text-slate-300 text-sm">一类动词 (促音)</div>
+                    <div className="text-slate-500 text-xs">う, つ, る → って</div>
                 </div>
             </div>
             <div className="flex items-center gap-3">
                 <span className="text-lg">☕</span>
                 <div>
-                    <div className="font-bold text-slate-300 text-sm">U-Verbs (Nde/Ite)</div>
-                    <div className="text-slate-500 text-xs">mu -> nde, ku -> ite</div>
+                    <div className="font-bold text-slate-300 text-sm">一类动词 (拨音/I音)</div>
+                    <div className="text-slate-500 text-xs">む → んで, く → いて</div>
                 </div>
             </div>
         </div>

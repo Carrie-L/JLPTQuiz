@@ -52,22 +52,22 @@ const VictoryScreen: React.FC<VictoryScreenProps> = ({ onRestart, onBack }) => {
             <div className="flex items-center gap-3 border-b border-slate-100 pb-2">
                 <span className="text-xl">🍚</span>
                 <div>
-                    <div className="font-bold text-slate-700 text-sm">Group 2 (Ru)</div>
-                    <div className="text-slate-400 text-xs">Drop ru + rareru</div>
+                    <div className="font-bold text-slate-700 text-sm">二类动词 (一段)</div>
+                    <div className="text-slate-400 text-xs">去掉 る + られる</div>
                 </div>
             </div>
             <div className="flex items-center gap-3 border-b border-slate-100 pb-2">
                 <span className="text-xl">🗺️</span>
                 <div>
-                    <div className="font-bold text-slate-700 text-sm">Group 1 (U)</div>
-                    <div className="text-slate-400 text-xs">u -> e + ru</div>
+                    <div className="font-bold text-slate-700 text-sm">一类动词 (五段)</div>
+                    <div className="text-slate-400 text-xs">u段 → e段 + る</div>
                 </div>
             </div>
             <div className="flex items-center gap-3">
                 <span className="text-xl">⛺</span>
                 <div>
-                    <div className="font-bold text-slate-700 text-sm">Irregular</div>
-                    <div className="text-slate-400 text-xs">suru -> dekiru</div>
+                    <div className="font-bold text-slate-700 text-sm">三类动词 (不规则)</div>
+                    <div className="text-slate-400 text-xs">する → できる</div>
                 </div>
             </div>
         </div>

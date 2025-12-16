@@ -65,7 +65,7 @@ const HandwritingInput: React.FC<{
 
       {/* Verb Display */}
       <div className="text-center py-4 bg-[#1A202C] rounded-lg border border-slate-700">
-          <div className="text-[10px] font-bold text-slate-500 tracking-widest uppercase mb-1">Verb</div>
+          <div className="text-[10px] font-bold text-slate-500 tracking-widest uppercase mb-1">动词</div>
           <div className="text-3xl font-black text-white tracking-tight">{verb}</div>
       </div>
 
@@ -108,7 +108,7 @@ const HandwritingInput: React.FC<{
               {/* Grammar Tag */}
               {grammarRule && (
                   <div className="hidden md:flex flex-col items-center justify-center bg-slate-700 px-3 h-14 rounded-lg border border-slate-600 min-w-[80px]">
-                      <span className="text-[10px] text-slate-400 font-bold uppercase leading-none mb-1">Rule</span>
+                      <span className="text-[10px] text-slate-400 font-bold uppercase leading-none mb-1">规则</span>
                       <span className="text-xs font-bold text-orange-300 leading-none">{grammarRule}</span>
                   </div>
               )}
@@ -117,7 +117,7 @@ const HandwritingInput: React.FC<{
           {/* Grammar Tag Mobile */}
           {grammarRule && (
               <div className="md:hidden flex items-center justify-center gap-2 text-xs font-bold text-orange-300 bg-slate-700 py-1 rounded">
-                  <span className="uppercase opacity-60 text-slate-400">Rule:</span> {grammarRule}
+                  <span className="uppercase opacity-60 text-slate-400">规则:</span> {grammarRule}
               </div>
           )}
           
@@ -132,7 +132,7 @@ const HandwritingInput: React.FC<{
                     : 'bg-orange-600 hover:bg-orange-500 text-white shadow-lg shadow-orange-900/50'}
             `}
           >
-              {isCompleted ? 'Te-Form Correct!' : 'Check'} 
+              {isCompleted ? '回答正确!' : '检查'} 
               {!isCompleted && <ArrowRight size={18} />}
           </button>
 
@@ -162,11 +162,11 @@ const InteractiveLab: React.FC<InteractiveLabProps> = ({ mode, onTaskComplete })
       return (
           <div className="w-full h-full flex flex-col items-center justify-center p-4 gap-8">
               <HandwritingInput 
-                  label="Camp Drill #1"
-                  verb="見る (Miru)"
+                  label="露营练习 1"
+                  verb="見る (みる)"
                   validAnswers={['mite', '見て', 'みて']}
-                  grammarRule="ru → te"
-                  hint="Hint: Just replace 'ru' with 'te'"
+                  grammarRule="る → て"
+                  hint="提示：直接去掉 'る' 换成 'て'"
                   onComplete={handleComplete}
               />
           </div>
@@ -177,11 +177,11 @@ const InteractiveLab: React.FC<InteractiveLabProps> = ({ mode, onTaskComplete })
       return (
           <div className="w-full h-full flex flex-col items-center justify-center p-4 gap-8">
               <HandwritingInput 
-                  label="Camp Drill #2"
-                  verb="立つ (Tatsu)"
+                  label="露营练习 2"
+                  verb="立つ (たつ)"
                   validAnswers={['tatte', '立って', 'たって']}
-                  grammarRule="tsu → tte"
-                  hint="Hint: Small tsu (っ) + te"
+                  grammarRule="つ → って"
+                  hint="提示：促音变 (小tsu + te)"
                   onComplete={handleComplete}
               />
           </div>
@@ -192,11 +192,11 @@ const InteractiveLab: React.FC<InteractiveLabProps> = ({ mode, onTaskComplete })
       return (
           <div className="w-full h-full flex flex-col items-center justify-center p-4 gap-8">
               <HandwritingInput 
-                  label="Camp Drill #3"
-                  verb="書く (Kaku)"
+                  label="露营练习 3"
+                  verb="書く (かく)"
                   validAnswers={['kaite', '書いて', 'かいて']}
-                  grammarRule="ku → ite"
-                  hint="Hint: Sound change to 'i'"
+                  grammarRule="く → いて"
+                  hint="提示：音变 (k 变成 i)"
                   onComplete={handleComplete}
               />
           </div>
@@ -207,11 +207,11 @@ const InteractiveLab: React.FC<InteractiveLabProps> = ({ mode, onTaskComplete })
       return (
           <div className="w-full h-full flex flex-col items-center justify-center p-4 gap-8">
               <HandwritingInput 
-                  label="Final Challenge"
-                  verb="飲む (Nomu)"
+                  label="最终挑战"
+                  verb="飲む (のむ)"
                   validAnswers={['nonde', '飲んで', 'のんで']}
-                  grammarRule="mu → nde"
-                  hint="Hint: Ends in 'mu' -> 'nde'"
+                  grammarRule="む → んで"
+                  hint="提示：以 'mu' 结尾变成 'nde'"
                   onComplete={handleComplete}
               />
           </div>

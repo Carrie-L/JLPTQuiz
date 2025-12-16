@@ -16,7 +16,7 @@ export const scriptData: ScriptStep[] = [
     id: 2,
     speaker: "凛 (Rin)",
     speakerColor: "blue",
-    text: "哦？抚子你会做饭吗？在日语里，表达“能力”或“可能性”时，我们要用到动词的「可能态」(Potential Form)。",
+    text: "哦？抚子你会做饭吗？在日语里，表达“能力”或“可能性”时，我们要用到动词的「可能态」(可能形)。",
     viewType: "IMAGE",
     viewContent: {
       imagePrompt: "A chalkboard appearing in the forest with Japanese verbs written on it.",
@@ -26,24 +26,24 @@ export const scriptData: ScriptStep[] = [
     id: 3,
     speaker: "凛 (Rin)",
     speakerColor: "blue",
-    text: "首先是最简单的二类动词（Ru-verbs）。比如「食べる」(Taberu - 吃)。只需要去掉词尾的 `ru`，加上 `rareru`。",
+    text: "首先是最简单的二类动词（一段动词）。比如「食べる」(たべる - 吃)。只需要去掉词尾的 `る`，加上 `られる`。",
     viewType: "GRAMMAR_EXPLAIN",
     viewContent: {
-      grammarRule: `// 二类动词 (Group 2)
-// 规则：去掉 ru + rareru
+      grammarRule: `// 二类动词 (一段)
+// 规则：去掉 る + られる
 
-食べる (Taberu) 
+食べる (たべる) 
   ⬇️
-食べ (Tabe) + られる (rareru)
+食べ (たべ) + られる
   ⬇️
-食べられる (Taberareru) = 能吃`,
+食べられる (たべられる) = 能吃`,
     },
   },
   {
     id: 4,
     speaker: "系统提示",
     speakerColor: "green",
-    text: "【手写练习】：抚子是个大胃王。请将「Taberu」变成可能态，表示“能吃”。(支持 汉字/平假名/Romaji)",
+    text: "【手写练习】：抚子是个大胃王。请将「食べる」变成可能态，表示“能吃”。(支持 汉字/平假名)",
     viewType: "INTERACTIVE_LAB",
     viewContent: {
       interactiveConfig: { mode: "group2_drill" },
@@ -63,24 +63,24 @@ export const scriptData: ScriptStep[] = [
     id: 6,
     speaker: "凛 (Rin)",
     speakerColor: "blue",
-    text: "「読む」(Yomu - 读) 是一类动词（U-verbs）。规则是：把词尾的 `u` 段假名变成 `e` 段，最后加上 `ru`。",
+    text: "「読む」(よむ - 读) 是一类动词（五段动词）。规则是：把词尾的 `u` 段假名变成 `e` 段，最后加上 `る`。",
     viewType: "GRAMMAR_EXPLAIN",
     viewContent: {
-      grammarRule: `// 一类动词 (Group 1)
-// 规则：词尾 u -> e + ru
+      grammarRule: `// 一类动词 (五段)
+// 规则：词尾 u段 -> e段 + る
 
-読む (Yomu)
-  ⬇️ mu 变 me
-読め (Yome) + る (ru)
+読む (よむ)
+  ⬇️ mu (む) 变 me (め)
+読め (よめ) + る
   ⬇️
-読める (Yomeru) = 能读`,
+読める (よめる) = 能读`,
     },
   },
   {
     id: 7,
     speaker: "系统提示",
     speakerColor: "green",
-    text: "【手写练习】：请将「Yomu」变成可能态，表示“能读”。",
+    text: "【手写练习】：请将「読む」变成可能态，表示“能读”。",
     viewType: "INTERACTIVE_LAB",
     viewContent: {
       interactiveConfig: { mode: "group1_drill" },
@@ -90,14 +90,14 @@ export const scriptData: ScriptStep[] = [
     id: 8,
     speaker: "凛 (Rin)",
     speakerColor: "blue",
-    text: "不错。最后是两个特殊的家伙：三类动词（Irregular）。「する」(Suru - 做) 和 「くる」(Kuru - 来)。",
+    text: "不错。最后是两个特殊的家伙：三类动词（不规则）。「する」(做) 和 「くる」(来)。",
     viewType: "GRAMMAR_EXPLAIN",
     viewContent: {
-      grammarRule: `// 三类动词 (Irregular)
+      grammarRule: `// 三类动词 (不规则)
 // 规则：死记硬背！
 
-する (Suru) ➡️ できる (Dekiru) = 能做
-くる (Kuru) ➡️ こられる (Korareru) = 能来`,
+する (suru) ➡️ できる (dekiru) = 能做
+くる (kuru) ➡️ こられる (korareru) = 能来`,
     },
   },
   {
@@ -124,7 +124,7 @@ export const scriptData: ScriptStep[] = [
     id: 11,
     speaker: "系统提示",
     speakerColor: "green",
-    text: "【终极挑战】：动词是「作る」(Tsukuru - 制作，一类动词)。请写出它的可能态。",
+    text: "【终极挑战】：动词是「作る」(つくる - 制作，一类动词)。请写出它的可能态。",
     viewType: "INTERACTIVE_LAB",
     viewContent: {
       interactiveConfig: { mode: "sentence_build" },
@@ -134,7 +134,7 @@ export const scriptData: ScriptStep[] = [
     id: 12,
     speaker: "凛 (Rin)",
     speakerColor: "blue",
-    text: "做得好，抚子。今晚的咖喱就拜托你了。（Tsukureru ne!）",
+    text: "做得好，抚子。今晚的咖喱就拜托你了。（つくれるね!）",
     viewType: "VICTORY",
     viewContent: {},
   },
