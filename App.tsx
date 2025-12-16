@@ -15,6 +15,10 @@ import GameEngine411 from './components/jp.n4.11/GameEngine';
 import GameEngine412 from './components/jp.n4.12/GameEngine';
 import GameEngine413 from './components/jp.n4.13/GameEngine';
 import GameEngine414 from './components/jp.n4.14/GameEngine';
+import GameEngine415 from './components/jp.n4.15/GameEngine';
+import GameEngine416 from './components/jp.n4.16/GameEngine';
+import GameEngine417 from './components/jp.n4.17/GameEngine';
+import GameEngine418 from './components/jp.n4.18/GameEngine';
 
 const App = () => {
   const [activeModule, setActiveModule] = useState<string | null>(null);
@@ -60,6 +64,18 @@ const App = () => {
   }
   if (activeModule === 'jp.n4.14') {
     return <GameEngine414 onExit={() => setActiveModule(null)} />;
+  }
+  if (activeModule === 'jp.n4.15') {
+    return <GameEngine415 onExit={() => setActiveModule(null)} />;
+  }
+  if (activeModule === 'jp.n4.16') {
+    return <GameEngine416 onExit={() => setActiveModule(null)} />;
+  }
+  if (activeModule === 'jp.n4.17') {
+    return <GameEngine417 onExit={() => setActiveModule(null)} />;
+  }
+  if (activeModule === 'jp.n4.18') {
+    return <GameEngine418 onExit={() => setActiveModule(null)} />;
   }
 
   return (
@@ -337,6 +353,78 @@ const App = () => {
             <p className="text-slate-400 text-sm group-hover:text-sky-500/80 transition-colors">Conditional Form (～ば If...)</p>
           </div>
           <div className="text-sky-200 group-hover:text-sky-400 transition-colors transform group-hover:translate-x-1 duration-300">
+             <Play size={24} fill="currentColor" />
+          </div>
+        </div>
+
+        {/* Card 15: Slate - Conditional Form (To) */}
+        <div 
+          onClick={() => setActiveModule('jp.n4.15')}
+          className="group bg-white border-2 border-slate-200 hover:border-slate-400 rounded-2xl p-4 flex items-center gap-4 cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 relative overflow-hidden"
+        >
+          <div className="absolute right-0 top-0 bottom-0 w-1 bg-slate-500 scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom" />
+          <div className="w-12 h-12 shrink-0 bg-slate-100 group-hover:bg-slate-200 rounded-full flex items-center justify-center text-slate-600 group-hover:text-slate-700 font-bold text-lg font-['Zen_Maru_Gothic']">
+             15
+          </div>
+          <div className="flex-grow">
+            <h3 className="font-bold text-slate-800 text-lg group-hover:text-slate-700 transition-colors">动词变形：条件形 ～と</h3>
+            <p className="text-slate-400 text-sm group-hover:text-slate-500/80 transition-colors">Conditional Form (～と Natural Result)</p>
+          </div>
+          <div className="text-slate-200 group-hover:text-slate-400 transition-colors transform group-hover:translate-x-1 duration-300">
+             <Play size={24} fill="currentColor" />
+          </div>
+        </div>
+
+        {/* Card 16: Teal - Conditional Form (Nara) */}
+        <div 
+          onClick={() => setActiveModule('jp.n4.16')}
+          className="group bg-white border-2 border-teal-200 hover:border-teal-400 rounded-2xl p-4 flex items-center gap-4 cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 relative overflow-hidden"
+        >
+          <div className="absolute right-0 top-0 bottom-0 w-1 bg-teal-500 scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom" />
+          <div className="w-12 h-12 shrink-0 bg-teal-100 group-hover:bg-teal-200 rounded-full flex items-center justify-center text-teal-600 group-hover:text-teal-700 font-bold text-lg font-['Zen_Maru_Gothic']">
+             16
+          </div>
+          <div className="flex-grow">
+            <h3 className="font-bold text-slate-800 text-lg group-hover:text-teal-700 transition-colors">动词变形：条件形 ～なら</h3>
+            <p className="text-slate-400 text-sm group-hover:text-teal-500/80 transition-colors">Conditional Form (～なら Context)</p>
+          </div>
+          <div className="text-teal-200 group-hover:text-teal-400 transition-colors transform group-hover:translate-x-1 duration-300">
+             <Play size={24} fill="currentColor" />
+          </div>
+        </div>
+
+        {/* Card 17: Zinc - Potential Koto ga Dekiru */}
+        <div 
+          onClick={() => setActiveModule('jp.n4.17')}
+          className="group bg-white border-2 border-zinc-200 hover:border-zinc-400 rounded-2xl p-4 flex items-center gap-4 cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 relative overflow-hidden"
+        >
+          <div className="absolute right-0 top-0 bottom-0 w-1 bg-zinc-500 scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom" />
+          <div className="w-12 h-12 shrink-0 bg-zinc-100 group-hover:bg-zinc-200 rounded-full flex items-center justify-center text-zinc-600 group-hover:text-zinc-700 font-bold text-lg font-['Zen_Maru_Gothic']">
+             17
+          </div>
+          <div className="flex-grow">
+            <h3 className="font-bold text-slate-800 text-lg group-hover:text-zinc-700 transition-colors">动词变形：～ことができる</h3>
+            <p className="text-slate-400 text-sm group-hover:text-zinc-500/80 transition-colors">Formal Potential (Koto ga dekiru)</p>
+          </div>
+          <div className="text-zinc-200 group-hover:text-zinc-400 transition-colors transform group-hover:translate-x-1 duration-300">
+             <Play size={24} fill="currentColor" />
+          </div>
+        </div>
+
+        {/* Card 18: Crimson - N3 Vocab */}
+        <div 
+          onClick={() => setActiveModule('jp.n4.18')}
+          className="group bg-white border-2 border-rose-200 hover:border-rose-400 rounded-2xl p-4 flex items-center gap-4 cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 relative overflow-hidden"
+        >
+          <div className="absolute right-0 top-0 bottom-0 w-1 bg-rose-500 scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom" />
+          <div className="w-12 h-12 shrink-0 bg-rose-100 group-hover:bg-rose-200 rounded-full flex items-center justify-center text-rose-600 group-hover:text-rose-700 font-bold text-lg font-['Zen_Maru_Gothic']">
+             18
+          </div>
+          <div className="flex-grow">
+            <h3 className="font-bold text-slate-800 text-lg group-hover:text-rose-700 transition-colors">N3词汇：感情与回忆</h3>
+            <p className="text-slate-400 text-sm group-hover:text-rose-500/80 transition-colors">N3 Vocabulary (Feelings & New Year)</p>
+          </div>
+          <div className="text-rose-200 group-hover:text-rose-400 transition-colors transform group-hover:translate-x-1 duration-300">
              <Play size={24} fill="currentColor" />
           </div>
         </div>
