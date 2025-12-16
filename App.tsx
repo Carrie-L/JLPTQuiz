@@ -11,6 +11,8 @@ import GameEngine47 from './components/jp.n4.7/GameEngine';
 import GameEngine48 from './components/jp.n4.8/GameEngine';
 import GameEngine49 from './components/jp.n4.9/GameEngine';
 import GameEngine410 from './components/jp.n4.10/GameEngine';
+import GameEngine411 from './components/jp.n4.11/GameEngine';
+import GameEngine412 from './components/jp.n4.12/GameEngine';
 
 const App = () => {
   const [activeModule, setActiveModule] = useState<string | null>(null);
@@ -44,6 +46,12 @@ const App = () => {
   }
   if (activeModule === 'jp.n4.10') {
     return <GameEngine410 onExit={() => setActiveModule(null)} />;
+  }
+  if (activeModule === 'jp.n4.11') {
+    return <GameEngine411 onExit={() => setActiveModule(null)} />;
+  }
+  if (activeModule === 'jp.n4.12') {
+    return <GameEngine412 onExit={() => setActiveModule(null)} />;
   }
 
   return (
@@ -249,6 +257,42 @@ const App = () => {
             <p className="text-slate-400 text-sm group-hover:text-red-500/80 transition-colors">Imperative Form (Command!)</p>
           </div>
           <div className="text-red-200 group-hover:text-red-400 transition-colors transform group-hover:translate-x-1 duration-300">
+             <Play size={24} fill="currentColor" />
+          </div>
+        </div>
+
+        {/* Card 11: Yellow - Prohibitive Form */}
+        <div 
+          onClick={() => setActiveModule('jp.n4.11')}
+          className="group bg-white border-2 border-yellow-100 hover:border-yellow-400 rounded-2xl p-4 flex items-center gap-4 cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 relative overflow-hidden"
+        >
+          <div className="absolute right-0 top-0 bottom-0 w-1 bg-yellow-400 scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom" />
+          <div className="w-12 h-12 shrink-0 bg-yellow-50 group-hover:bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 group-hover:text-yellow-700 font-bold text-lg font-['Zen_Maru_Gothic']">
+             11
+          </div>
+          <div className="flex-grow">
+            <h3 className="font-bold text-slate-800 text-lg group-hover:text-yellow-700 transition-colors">动词变形：禁止形</h3>
+            <p className="text-slate-400 text-sm group-hover:text-yellow-500/80 transition-colors">Prohibitive Form (Don't!)</p>
+          </div>
+          <div className="text-yellow-200 group-hover:text-yellow-400 transition-colors transform group-hover:translate-x-1 duration-300">
+             <Play size={24} fill="currentColor" />
+          </div>
+        </div>
+
+        {/* Card 12: Fuchsia - Volitional Form */}
+        <div 
+          onClick={() => setActiveModule('jp.n4.12')}
+          className="group bg-white border-2 border-fuchsia-100 hover:border-fuchsia-400 rounded-2xl p-4 flex items-center gap-4 cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 relative overflow-hidden"
+        >
+          <div className="absolute right-0 top-0 bottom-0 w-1 bg-fuchsia-400 scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom" />
+          <div className="w-12 h-12 shrink-0 bg-fuchsia-50 group-hover:bg-fuchsia-100 rounded-full flex items-center justify-center text-fuchsia-600 group-hover:text-fuchsia-700 font-bold text-lg font-['Zen_Maru_Gothic']">
+             12
+          </div>
+          <div className="flex-grow">
+            <h3 className="font-bold text-slate-800 text-lg group-hover:text-fuchsia-700 transition-colors">动词变形：意向形</h3>
+            <p className="text-slate-400 text-sm group-hover:text-fuchsia-500/80 transition-colors">Volitional Form (Let's/Shall we)</p>
+          </div>
+          <div className="text-fuchsia-200 group-hover:text-fuchsia-400 transition-colors transform group-hover:translate-x-1 duration-300">
              <Play size={24} fill="currentColor" />
           </div>
         </div>
